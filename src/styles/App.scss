@@ -1,0 +1,15 @@
+// App.scss
+
+$background: #f5f8ff;
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, $background 0%, #e6ebff 100%);
+
+  main {
+    flex: 1;
+    padding: 1rem;
+  }
+}

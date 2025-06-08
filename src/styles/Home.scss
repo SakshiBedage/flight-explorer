@@ -1,0 +1,293 @@
+// Home.scss
+
+$primary: #1E90FF;
+$success: #34C759;
+$text-primary: #1A2C42;
+$card-bg: #FFFFFF;
+
+.home {
+  font-family: "Inter", "Arial", sans-serif;
+  background: linear-gradient(135deg, #F5F8FF 0%, #E6EBFF 100%);
+  color: $text-primary;
+}
+
+.hero-section {
+  position: relative;
+  height: 70vh;
+  background-image: url("https://images.unsplash.com/photo-1507521628349-dee9b8a8e4d5?auto=format&fit=crop&w=1920");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(30, 144, 255, 0.3));
+    z-index: 1;
+  }
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  color: #FFFFFF;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  animation: slideIn 1s ease-out;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.hero-cta-button {
+  padding: 15px 40px;
+  background: linear-gradient(45deg, $primary, darken($primary, 10%));
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+
+.welcome-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.welcome-card {
+  background: $card-bg;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-in-out;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.welcome-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: 15px;
+}
+
+.welcome-message {
+  font-size: 1.1rem;
+  color: #64748B;
+  margin-bottom: 20px;
+}
+
+.admin-button {
+  padding: 10px 25px;
+  background: linear-gradient(45deg, $success, darken($success, 10%));
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+
+.featured-section {
+  padding: 40px 20px;
+  background: #F5F8FF;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $text-primary;
+  text-align: center;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.destination-card {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  animation: fadeIn 1s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+    .destination-overlay {
+      background: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(30, 144, 255, 0.2));
+    z-index: 1;
+  }
+}
+
+.destination-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  z-index: 2;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease;
+}
+
+.destination-city {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.destination-price {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.destination-button {
+  padding: 10px 25px;
+  background: linear-gradient(45deg, $primary, darken($primary, 10%));
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 50vh;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-cta-button {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+
+  .welcome-card {
+    padding: 20px;
+  }
+
+  .welcome-title {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .destination-card {
+    height: 250px;
+  }
+
+  .destination-city {
+    font-size: 1.5rem;
+  }
+
+  .destination-price {
+    font-size: 1rem;
+  }
+}

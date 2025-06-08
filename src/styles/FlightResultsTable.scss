@@ -1,0 +1,153 @@
+// FlightResultsTable.scss
+
+$primary: #1e90ff;
+$text-primary: #1a2c42;
+$text-secondary: #64748b;
+$card-bg: #ffffff;
+
+.results-column {
+  flex: 3;
+  min-width: 0;
+}
+
+.flight-results {
+  background: $card-bg;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  border: none;
+  transition: transform 0.3s ease;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.flight-results h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $text-primary;
+  margin: 0 0 20px;
+}
+
+.table-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  border-radius: 8px;
+  max-height: 600px;
+}
+
+.flight-results table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  display: table;
+  table-layout: fixed; 
+}
+
+.flight-results th,
+.flight-results td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.flight-results th {
+  background: linear-gradient(45deg, #f8fafc, #e2e8f0);
+  color: $text-primary;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.flight-results td {
+  color: $text-primary;
+  font-size: 0.95rem;
+}
+
+.flight-results tr {
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #f1f5f9;
+    transform: scale(1.005);
+  }
+}
+
+.flight-results tbody {
+  display: table-row-group;
+}
+
+.table-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: $text-secondary;
+  border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: darken($text-secondary, 10%);
+}
+
+.book-now-button {
+  padding: 8px 15px;
+  background: linear-gradient(45deg, $primary, darken($primary, 10%));
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  &:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+  }
+}
+
+@media (max-width: 768px) {
+  .results-column {
+    flex: 1;
+  }
+
+  .flight-results {
+    padding: 15px;
+    height: 400px;
+  }
+
+  .flight-results h3 {
+    font-size: 1.3rem;
+  }
+
+  .flight-results th,
+  .flight-results td {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+
+  .book-now-button {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}

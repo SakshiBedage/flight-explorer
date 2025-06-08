@@ -1,0 +1,491 @@
+// AdminPage.scss
+
+$primary: #1e90ff;
+$secondary: #ff6f61;
+$background: #f5f8ff;
+$text-primary: #1a2c42;
+$text-secondary: #64748b;
+$success: #34c759;
+$danger: #ff3b30;
+$card-bg: #ffffff;
+
+.admin-dashboard {
+  font-family: "Inter", "Arial", sans-serif;
+  padding: 30px;
+  background: linear-gradient(135deg, $background 0%, #e6ebff 100%);
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $text-primary;
+  margin-bottom: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, $primary, $secondary);
+    border-radius: 2px;
+  }
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.tab-button {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  background: $card-bg;
+  color: $text-secondary;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, $primary, $secondary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  &.active {
+    background: linear-gradient(45deg, $primary, $secondary);
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(30, 144, 255, 0.3);
+    transform: translateY(-3px);
+
+    &:before {
+      opacity: 1;
+    }
+  }
+}
+
+.tab-content {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.flights-section,
+.bookings-section {
+  background: $card-bg;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  margin-bottom: 30px;
+  border: none;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.flights-section h3,
+.bookings-section h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: $text-primary;
+  margin: 0 0 20px;
+  border-bottom: 2px solid $primary;
+  padding-bottom: 10px;
+}
+
+.filters {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.search-bar {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+
+  &:before {
+    content: "\1F50D"; 
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: $text-secondary;
+    pointer-events: none;
+  }
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 15px 12px 40px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: $text-primary;
+  background: #f9fafb;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.2);
+    outline: none;
+    background: #ffffff;
+  }
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: $text-primary;
+  background: #f9fafb;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.2);
+    outline: none;
+    background: #ffffff;
+  }
+}
+
+.add-flight-button {
+  padding: 12px 25px;
+  background: linear-gradient(45deg, $success, darken($success, 10%));
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.table-wrapper {
+  max-height: 600px;
+  overflow-y: auto;
+  border-radius: 8px;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $text-secondary;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: darken($text-secondary, 10%);
+  }
+}
+
+.flights-table,
+.bookings-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 10px;
+
+  th,
+  td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  th {
+    background: linear-gradient(45deg, #f8fafc, #e2e8f0);
+    color: $text-primary;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  td {
+    color: $text-primary;
+    font-size: 0.95rem;
+  }
+
+  tr {
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #f1f5f9;
+      transform: scale(1.005);
+    }
+  }
+}
+
+.edit-button,
+.delete-button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+.edit-button {
+  background: $primary;
+  color: #ffffff;
+
+  &:hover {
+    background: darken($primary, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+.delete-button {
+  background: $danger;
+  color: #ffffff;
+
+  &:hover {
+    background: darken($danger, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal {
+  background: $card-bg;
+  border-radius: 12px;
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease-out;
+}
+
+.modal h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: $text-primary;
+  margin: 0 0 20px;
+  border-bottom: 2px solid $primary;
+  padding-bottom: 10px;
+}
+
+.modal-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: $text-primary;
+  background: #f9fafb;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.2);
+    outline: none;
+    background: #ffffff;
+  }
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+
+.save-button,
+.cancel-button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.save-button {
+  background: linear-gradient(45deg, $success, darken($success, 10%));
+  color: #ffffff;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.cancel-button {
+  background: linear-gradient(45deg, $danger, darken($danger, 10%));
+  color: #ffffff;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-dashboard {
+    padding: 15px;
+  }
+
+  .dashboard-header {
+    font-size: 2rem;
+  }
+
+  .tabs {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .tab-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .flights-section,
+  .bookings-section {
+    padding: 20px;
+  }
+
+  .modal-form {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .search-bar,
+  .filter-group {
+    min-width: 100%;
+  }
+}

@@ -1,0 +1,60 @@
+// Notification.scss
+
+$danger: #ff3b30;
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, lighten($danger, 20%), $danger);
+  color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .notification {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+}

@@ -1,0 +1,468 @@
+// Search.scss
+
+$primary: #1E90FF;
+$success: #34C759;
+$danger: #FF3B30;
+$text-primary: #1A2C42;
+$text-secondary: #64748B;
+$card-bg: #FFFFFF;
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.search-form-container,
+.results-page,
+.booking-details-page,
+.confirmation-page {
+  font-family: "Inter", "Arial", sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  background: linear-gradient(135deg, #F5F8FF 0%, #E6EBFF 100%);
+}
+
+.search-form-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &.in-results {
+    min-height: auto;
+    padding: 10px;
+    background: $card-bg;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: $text-primary;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, $primary, #FF6F61);
+    border-radius: 2px;
+  }
+}
+
+h3 {
+  color: $text-primary;
+  margin: 20px 0 10px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-bottom: 2px solid $primary;
+  padding-bottom: 8px;
+}
+
+.search-tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  justify-content: center;
+
+  span {
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $text-secondary;
+    padding: 8px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    background: $card-bg;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      color: $primary;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    &.active {
+      background: linear-gradient(45deg, $primary, darken($primary, 10%));
+      color: #FFFFFF;
+      box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
+    }
+  }
+}
+
+.error-message {
+  background: linear-gradient(45deg, lighten($danger, 20%), $danger);
+  color: #FFFFFF;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.book-now-button {
+  padding: 8px 15px;
+  background: linear-gradient(45deg, $success, darken($success, 10%));
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  &:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  &:disabled {
+    background: #CBD5E1;
+    cursor: not-allowed;
+  }
+}
+
+.pay-now-button,
+.back-to-search-button {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pay-now-button {
+  background: linear-gradient(45deg, $primary, darken($primary, 10%));
+  color: #FFFFFF;
+
+  &:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  &:disabled {
+    background: #CBD5E1;
+    cursor: not-allowed;
+  }
+}
+
+.back-to-search-button {
+  background: linear-gradient(45deg, $text-secondary, darken($text-secondary, 10%));
+  color: #FFFFFF;
+
+  &:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.flight-summary,
+.passenger-form,
+.confirmation-details {
+  background: $card-bg;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  p {
+    margin: 5px 0;
+    color: $text-secondary;
+    font-size: 0.95rem;
+  }
+
+  strong {
+    color: $text-primary;
+    font-weight: 600;
+  }
+}
+
+.passenger-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.total-price {
+  text-align: center;
+  margin: 20px 0;
+
+  h3 {
+    margin: 0;
+    color: $success;
+    font-size: 2rem;
+    animation: glow 2s infinite ease-in-out;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.search-form {
+  background: $card-bg;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 900px;
+  transition: transform 0.3s ease;
+  animation: fadeIn 0.5s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .segment {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    position: relative;
+  }
+
+  .form-group {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: $text-primary;
+      font-size: 0.95rem;
+
+      .form-icon {
+        margin-right: 8px;
+        color: $primary;
+        font-size: 1.2rem;
+      }
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      box-sizing: border-box;
+      background: #F9FAFB;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+      font-size: 1rem;
+      color: $text-primary;
+      transition: all 0.3s ease;
+
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.2);
+        outline: none;
+        background: #FFFFFF;
+      }
+    }
+  }
+
+  .add-segment,
+  .remove-segment {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .add-segment {
+    background: linear-gradient(45deg, $success, darken($success, 10%));
+    color: #FFFFFF;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .remove-segment {
+    background: linear-gradient(45deg, $danger, darken($danger, 10%));
+    color: #FFFFFF;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .search-button {
+    width: 100%;
+    max-width: 300px;
+    padding: 14px;
+    background: linear-gradient(45deg, $primary, darken($primary, 10%));
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 20px auto 0;
+    display: block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(52, 199, 89, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(52, 199, 89, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(52, 199, 89, 0.5);
+  }
+}
+
+@media (max-width: 768px) {
+  .search-form-container,
+  .results-page,
+  .booking-details-page,
+  .confirmation-page {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 2rem;
+
+    &:after {
+      width: 60px;
+    }
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  .search-tabs {
+    gap: 10px;
+
+    span {
+      font-size: 0.95rem;
+      padding: 6px 15px;
+    }
+  }
+
+  .search-form {
+    padding: 15px;
+    max-width: 100%;
+
+    .segment {
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .form-group {
+      min-width: 100%;
+
+      label {
+        font-size: 0.9rem;
+      }
+
+      input,
+      select {
+        padding: 10px;
+        font-size: 0.95rem;
+      }
+    }
+
+    .add-segment,
+    .remove-segment {
+      padding: 6px 12px;
+      font-size: 0.85rem;
+    }
+
+    .search-button {
+      padding: 12px;
+      font-size: 1rem;
+      max-width: 100%;
+    }
+  }
+
+  .flight-summary,
+  .passenger-form,
+  .confirmation-details {
+    padding: 15px;
+  }
+
+  .total-price h3 {
+    font-size: 1.8rem;
+  }
+
+  .book-now-button {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .pay-now-button,
+  .back-to-search-button {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+}

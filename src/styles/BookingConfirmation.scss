@@ -1,0 +1,179 @@
+// BookingConfirmation.scss
+
+$primary: #1E90FF;
+$success: #34C759;
+$text-primary: #1A2C42;
+$text-secondary: #64748B;
+$card-bg: #FFFFFF;
+
+.confirmation-container {
+  font-family: "Inter", "Arial", sans-serif;
+  padding: 30px;
+  background: linear-gradient(135deg, #F5F8FF 0%, #E6EBFF 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.confirmation-header {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $text-primary;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.confirmation-message {
+  background: linear-gradient(45deg, lighten($success, 20%), $success);
+  color: #FFFFFF;
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.confirmation-details-card {
+  background: $card-bg;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  width: 100%;
+  border: none;
+  margin-bottom: 25px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.confirmation-details-card h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: $text-primary;
+  margin: 0 0 15px;
+  border-bottom: 2px solid $primary;
+  padding-bottom: 8px;
+}
+
+.section-divider {
+  border: 0;
+  border-top: 1px solid #E2E8F0;
+  margin: 20px 0;
+}
+
+.flight-info,
+.passenger-info {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 1rem;
+  color: $text-secondary;
+}
+
+.flight-info .icon,
+.passenger-info .icon {
+  margin-right: 12px;
+  font-size: 1.3rem;
+  color: $primary;
+}
+
+.flight-info p,
+.passenger-info p {
+  margin: 0;
+}
+
+.flight-info strong,
+.passenger-info strong {
+  color: $text-primary;
+  font-weight: 600;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.download-pdf-button,
+.back-to-search-button {
+  padding: 14px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 200px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.download-pdf-button {
+  background: linear-gradient(45deg, $primary, darken($primary, 10%));
+  color: #FFFFFF;
+
+  &:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.back-to-search-button {
+  background: linear-gradient(45deg, $text-secondary, darken($text-secondary, 10%));
+  color: #FFFFFF;
+
+  &:hover:not(:disabled) {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .confirmation-container {
+    padding: 15px;
+  }
+
+  .confirmation-header {
+    font-size: 2rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .download-pdf-button,
+  .back-to-search-button {
+    min-width: 100%;
+  }
+}

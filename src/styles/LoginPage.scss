@@ -1,0 +1,36 @@
+// LoginPage.scss
+
+$primary: #1e90ff;
+$text-primary: #1a2c42;
+
+.login-page {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f8ff 0%, #e6ebff 100%);
+  min-height: 100vh;
+
+  h2 {
+    color: $text-primary;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #64748b;
+
+    a {
+      color: $primary;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: darken($primary, 10%);
+        text-decoration: underline;
+      }
+    }
+  }
+}

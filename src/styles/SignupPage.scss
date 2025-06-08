@@ -1,0 +1,100 @@
+// SignupPage.scss
+
+$primary: #1e90ff;
+$text-primary: #1a2c42;
+$text-secondary: #64748b;
+
+.signup-page {
+  font-family: "Inter", "Arial", sans-serif;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f8ff 0%, #e6ebff 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeIn 0.5s ease-in-out;
+
+  h2 {
+    color: $text-primary;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, $primary, #ff6f61);
+      border-radius: 2px;
+    }
+  }
+
+  p {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: $text-secondary;
+    font-weight: 500;
+
+    a {
+      color: $primary;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      transition: all 0.3s ease;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $primary;
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: darken($primary, 10%);
+
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .signup-page {
+    padding: 1.5rem;
+
+    h2 {
+      font-size: 2rem;
+
+      &:after {
+        width: 60px;
+      }
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+  }
+}

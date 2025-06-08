@@ -1,0 +1,89 @@
+// Login.scss
+
+$primary: #1e90ff;
+$text-primary: #1a2c42;
+$danger: #ff3b30;
+
+.login {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.5s ease-in-out;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    h3 {
+      text-align: center;
+      color: $text-primary;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: $text-primary;
+      }
+
+      input {
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        color: $text-primary;
+        background: #f9fafb;
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+
+        &:focus {
+          box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.2);
+          outline: none;
+          background: #ffffff;
+        }
+      }
+    }
+
+    button {
+      background: linear-gradient(45deg, $primary, darken($primary, 10%));
+      color: #ffffff;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .error {
+      color: $danger;
+      text-align: center;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

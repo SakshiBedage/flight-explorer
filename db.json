@@ -1,0 +1,639 @@
+{
+  "flights": [
+    {
+      "id": "13",
+      "flight": {
+        "iata": "UA654",
+        "airline": "United Airlines",
+        "status": "active",
+        "stops": 1,
+        "layovers": [
+          "SFO"
+        ]
+      },
+      "departure": {
+        "airport": "San Francisco International",
+        "iata": "SFO",
+        "scheduled": "2025-06-08T13:00:00-07:00",
+        "timezone": "America/Los_Angeles"
+      },
+      "arrival": {
+        "airport": "Chicago O'Hare International",
+        "iata": "ORD",
+        "scheduled": "2025-06-08T19:00:00-05:00",
+        "timezone": "America/Chicago"
+      },
+      "price": 250,
+      "seats": {
+        "available": 75,
+        "booked": 25
+      }
+    },
+    {
+      "id": "14",
+      "flight": {
+        "iata": "EK123",
+        "airline": "Emirates",
+        "status": "scheduled",
+        "stops": 0
+      },
+      "departure": {
+        "airport": "Dubai International",
+        "iata": "DXB",
+        "scheduled": "2025-06-08T23:00:00+04:00",
+        "timezone": "Asia/Dubai"
+      },
+      "arrival": {
+        "airport": "Indira Gandhi International",
+        "iata": "DEL",
+        "scheduled": "2025-06-09T03:30:00+05:30",
+        "timezone": "Asia/Kolkata"
+      },
+      "price": 400,
+      "seats": {
+        "available": 100,
+        "booked": 30
+      }
+    },
+    {
+      "id": "15",
+      "flight": {
+        "iata": "SQ987",
+        "airline": "Singapore Airlines",
+        "status": "scheduled",
+        "stops": 1,
+        "layovers": [
+          "HKG"
+        ]
+      },
+      "departure": {
+        "airport": "Changi",
+        "iata": "SIN",
+        "scheduled": "2025-06-08T09:00:00+08:00",
+        "timezone": "Asia/Singapore"
+      },
+      "arrival": {
+        "airport": "San Francisco International",
+        "iata": "SFO",
+        "scheduled": "2025-06-08T12:00:00-07:00",
+        "timezone": "America/Los_Angeles"
+      },
+      "price": 1400,
+      "seats": {
+        "available": 60,
+        "booked": 40
+      }
+    },
+    {
+      "id": "16",
+      "flight": {
+        "iata": "AI654",
+        "airline": "Air India",
+        "status": "scheduled",
+        "stops": 0
+      },
+      "departure": {
+        "airport": "Chhatrapati Shivaji Maharaj International",
+        "iata": "BOM",
+        "scheduled": "2025-06-08T10:00:00+05:30",
+        "timezone": "Asia/Kolkata"
+      },
+      "arrival": {
+        "airport": "Bengaluru International",
+        "iata": "BLR",
+        "scheduled": "2025-06-08T12:00:00+05:30",
+        "timezone": "Asia/Kolkata"
+      },
+      "price": 100,
+      "seats": {
+        "available": 50,
+        "booked": 10
+      }
+    },
+    {
+      "id": "17",
+      "flight": {
+        "iata": "BA321",
+        "airline": "British Airways",
+        "status": "scheduled",
+        "stops": 1,
+        "layovers": [
+          "LHR"
+        ]
+      },
+      "departure": {
+        "airport": "Heathrow",
+        "iata": "LHR",
+        "scheduled": "2025-06-08T14:00:00+01:00",
+        "timezone": "Europe/London"
+      },
+      "arrival": {
+        "airport": "John F. Kennedy International",
+        "iata": "JFK",
+        "scheduled": "2025-06-08T17:00:00-04:00",
+        "timezone": "America/New_York"
+      },
+      "price": 800,
+      "seats": {
+        "available": 90,
+        "booked": 20
+      }
+    },
+    {
+      "id": "18",
+      "flight": {
+        "iata": "DL987",
+        "airline": "Delta Air Lines",
+        "status": "scheduled",
+        "stops": 0
+      },
+      "departure": {
+        "airport": "Hartsfield-Jackson Atlanta International",
+        "iata": "ATL",
+        "scheduled": "2025-06-08T16:00:00-04:00",
+        "timezone": "America/New_York"
+      },
+      "arrival": {
+        "airport": "Los Angeles International",
+        "iata": "LAX",
+        "scheduled": "2025-06-08T19:30:00-07:00",
+        "timezone": "America/Los_Angeles"
+      },
+      "price": 300,
+      "seats": {
+        "available": 70,
+        "booked": 15
+      }
+    },
+    {
+      "id": "19",
+      "flight": {
+        "iata": "LH123",
+        "airline": "Lufthansa",
+        "status": 2,
+        "stops": 2,
+        "layovers": [
+          "FRA",
+          "ZZB"
+        ]
+      },
+      "departure": {
+        "airport": "Frankfurt",
+        "iata": "FRA",
+        "scheduled": "2025-06-08T09:00:00+02:00",
+        "timezone": "Europe/Berlin"
+      },
+      "arrival": {
+        "airport": "Chhatrapati Shivaji Maharaj International",
+        "iata": "BOM",
+        "scheduled": "2025-06-08T23:59:00+05:30",
+        "timezone": "Asia/Kolkata"
+      },
+      "price": 135,
+      "seats": {
+        "available": 150,
+        "booked": 100
+      }
+    },
+    {
+      "id": "20",
+      "flight": {
+        "iata": "QR654",
+        "airline": "Qatar Airways",
+        "status": "queued",
+        "stops": 0
+      },
+      "departure": {
+        "airport": "Hamad International",
+        "iata": "DOH",
+        "scheduled": "2025-06-08T05:00:00+03:00",
+        "timezone": "Asia/Qatar"
+      },
+      "arrival": {
+        "airport": "Changi",
+        "iata": "SIN",
+        "scheduled": "2025-06-08T17:00:00+08:00",
+        "timezone": "Asia/Singapore"
+      },
+      "price": 550,
+      "seats": {
+        "available": 100,
+        "booked": 25
+      }
+    },
+    {
+      "id": "21",
+      "flight": {
+        "iata": "UA123",
+        "airline": "United Airlines",
+        "status": "scheduled",
+        "stops": 0
+      },
+      "departure": {
+        "iata": "LAX",
+        "scheduled": "2025-06-08T08:00:00Z"
+      },
+      "arrival": {
+        "iata": "JFK",
+        "scheduled": "2025-06-08T16:30:00Z"
+      },
+      "price": 350,
+      "seats": {
+        "available": 120
+      }
+    },
+    {
+      "id": "22",
+      "flight": {
+        "iata": "AI789",
+        "airline": "Air India",
+        "status": "scheduled",
+        "stops": 0
+      },
+      "departure": {
+        "iata": "PNQ",
+        "scheduled": "2025-06-08T08:00:00Z"
+      },
+      "arrival": {
+        "iata": "BOM",
+        "scheduled": "2025-06-08T09:00:00Z"
+      },
+      "price": 80,
+      "seats": {
+        "available": 50
+      }
+    },
+    {
+      "id": "23",
+      "flight": {
+        "iata": "AI321",
+        "airline": "Air India",
+        "status": "scheduled",
+        "stops": 0
+      },
+      "departure": {
+        "iata": "DEL",
+        "scheduled": "2025-06-08T10:00:00Z"
+      },
+      "arrival": {
+        "iata": "BOM",
+        "scheduled": "2025-06-08T12:15:00Z"
+      },
+      "price": 90,
+      "seats": {
+        "available": 80
+      }
+    },
+    {
+      "id": "24",
+      "flight": {
+        "iata": "EK123",
+        "airline": "Emirates",
+        "status": "scheduled",
+        "stops": 0
+      },
+      "departure": {
+        "iata": "BOM",
+        "scheduled": "2025-06-08T14:00:00Z"
+      },
+      "arrival": {
+        "iata": "SIN",
+        "scheduled": "2025-06-08T21:30:00Z"
+      },
+      "price": 400,
+      "seats": {
+        "available": 30
+      }
+    },
+    {
+      "id": "25",
+      "flight": {
+        "iata": "DL456",
+        "airline": "Delta Air Lines",
+        "status": "scheduled",
+        "stops": 1,
+        "layovers": [
+          "ATL"
+        ]
+      },
+      "departure": {
+        "iata": "JFK",
+        "scheduled": "2025-06-08T09:00:00Z"
+      },
+      "arrival": {
+        "iata": "LAX",
+        "scheduled": "2025-06-08T15:00:00Z"
+      },
+      "price": 300,
+      "seats": {
+        "available": 100
+      }
+    },
+    {
+      "id": "26",
+      "flight": {
+        "iata": "SQ789",
+        "airline": "Singapore Airlines",
+        "status": "scheduled",
+        "stops": 0
+      },
+      "departure": {
+        "iata": "SIN",
+        "scheduled": "2025-06-08T06:00:00Z"
+      },
+      "arrival": {
+        "iata": "BOM",
+        "scheduled": "2025-06-08T09:30:00Z"
+      },
+      "price": 450,
+      "seats": {
+        "available": 40
+      }
+    },
+    {
+      "id": "27",
+      "flight": {
+        "iata": "BA654",
+        "airline": "British Airways",
+        "status": "delayed",
+        "stops": 1,
+        "layovers": [
+          "LHR"
+        ]
+      },
+      "departure": {
+        "iata": "BOM",
+        "scheduled": "2025-06-08T12:00:00Z"
+      },
+      "arrival": {
+        "iata": "LHR",
+        "scheduled": "2025-06-08T21:00:00Z"
+      },
+      "price": 600,
+      "seats": {
+        "available": 20
+      }
+    },
+    {
+      "id": "28",
+      "flight": {
+        "iata": "LH321",
+        "airline": "Lufthansa",
+        "status": "scheduled",
+        "stops": 0
+      },
+      "departure": {
+        "iata": "FRA",
+        "scheduled": "2025-06-08T07:00:00Z"
+      },
+      "arrival": {
+        "iata": "BOM",
+        "scheduled": "2025-06-08T16:30:00Z"
+      },
+      "price": 700,
+      "seats": {
+        "available": 60
+      }
+    },
+    {
+      "id": "29",
+      "flight": {
+        "iata": "QR987",
+        "airline": "Qatar Airways",
+        "status": "scheduled",
+        "stops": 1,
+        "layovers": [
+          "DOH"
+        ]
+      },
+      "departure": {
+        "iata": "BOM",
+        "scheduled": "2025-06-08T03:00:00Z"
+      },
+      "arrival": {
+        "iata": "DOH",
+        "scheduled": "2025-06-08T05:00:00Z"
+      },
+      "price": 500,
+      "seats": {
+        "available": 25
+      }
+    },
+    {
+      "id": "30",
+      "flight": {
+        "iata": "AF123",
+        "airline": "Air France",
+        "status": "scheduled",
+        "stops": 0
+      },
+      "departure": {
+        "iata": "CDG",
+        "scheduled": "2025-06-08T09:00:00Z"
+      },
+      "arrival": {
+        "iata": "BOM",
+        "scheduled": "2025-06-08T19:00:00Z"
+      },
+      "price": 650,
+      "seats": {
+        "available": 35
+      }
+    },
+    {
+      "id": "31",
+      "flight": {
+        "iata": "UA789",
+        "airline": "United Airlines",
+        "status": "scheduled",
+        "stops": 0
+      },
+      "departure": {
+        "iata": "PNQ",
+        "scheduled": "2025-06-17T06:00:00Z"
+      },
+      "arrival": {
+        "iata": "BOM",
+        "scheduled": "2025-06-17T07:00:00Z"
+      },
+      "price": 100,
+      "seats": {
+        "available": 70
+      }
+    },
+    {
+      "id": "33",
+      "flight": {
+        "iata": "SQ567",
+        "airline": "Singapore Airlines",
+        "status": "scheduled",
+        "stops": 0
+      },
+      "departure": {
+        "iata": "PNQ",
+        "scheduled": "2025-06-17T15:00:00Z"
+      },
+      "arrival": {
+        "iata": "BOM",
+        "scheduled": "2025-06-17T16:00:00Z"
+      },
+      "price": 150,
+      "seats": {
+        "available": 40
+      }
+    },
+    {
+      "id": "34",
+      "flight": {
+        "iata": "BA890",
+        "airline": "British Airways",
+        "status": "scheduled",
+        "stops": 1,
+        "layovers": [
+          "DEL"
+        ]
+      },
+      "departure": {
+        "iata": "PNQ",
+        "scheduled": "2025-06-17T09:00:00Z"
+      },
+      "arrival": {
+        "iata": "BOM",
+        "scheduled": "2025-06-17T11:30:00Z"
+      },
+      "price": 200,
+      "seats": {
+        "available": 30
+      }
+    },
+    {
+      "id": "35",
+      "flight": {
+        "iata": "UA456",
+        "airline": "United Airlines",
+        "status": "scheduled",
+        "stops": 0
+      },
+      "departure": {
+        "iata": "BOM",
+        "scheduled": "2025-06-18T07:00:00Z"
+      },
+      "arrival": {
+        "iata": "PNQ",
+        "scheduled": "2025-06-18T08:00:00Z"
+      },
+      "price": 110,
+      "seats": {
+        "available": 65
+      }
+    },
+    {
+      "id": "36",
+      "flight": {
+        "iata": "DL789",
+        "airline": "Delta Air Lines",
+        "status": "scheduled",
+        "stops": 0
+      },
+      "departure": {
+        "iata": "BOM",
+        "scheduled": "2025-06-18T14:00:00Z"
+      },
+      "arrival": {
+        "iata": "PNQ",
+        "scheduled": "2025-06-18T15:00:00Z"
+      },
+      "price": 130,
+      "seats": {
+        "available": 55
+      }
+    },
+    {
+      "id": "37",
+      "flight": {
+        "iata": "AI654",
+        "airline": "Air India",
+        "status": "scheduled",
+        "stops": 0
+      },
+      "departure": {
+        "iata": "BOM",
+        "scheduled": "2025-06-18T18:00:00Z"
+      },
+      "arrival": {
+        "iata": "PNQ",
+        "scheduled": "2025-06-18T19:00:00Z"
+      },
+      "price": 90,
+      "seats": {
+        "available": 45
+      }
+    },
+    {
+      "id": "38",
+      "flight": {
+        "iata": "LH987",
+        "airline": "Lufthansa",
+        "status": "scheduled",
+        "stops": 1,
+        "layovers": [
+          "DEL"
+        ]
+      },
+      "departure": {
+        "iata": "BOM",
+        "scheduled": "2025-06-18T10:00:00Z"
+      },
+      "arrival": {
+        "iata": "PNQ",
+        "scheduled": "2025-06-18T12:30:00Z"
+      },
+      "price": 180,
+      "seats": {
+        "available": 35
+      }
+    },
+    {
+      "id": "39",
+      "flight": {
+        "iata": "QR321",
+        "airline": "Qatar Airways",
+        "status": "scheduled",
+        "stops": 0
+      },
+      "departure": {
+        "iata": "PNQ",
+        "scheduled": "2025-06-17T20:00:00Z"
+      },
+      "arrival": {
+        "iata": "BOM",
+        "scheduled": "2025-06-17T21:00:00Z"
+      },
+      "price": 140,
+      "seats": {
+        "available": 50
+      }
+    },
+    {
+      "id": "40",
+      "flight": {
+        "iata": "AF456",
+        "airline": "Air France",
+        "status": "scheduled",
+        "stops": 0
+      },
+      "departure": {
+        "iata": "BOM",
+        "scheduled": "2025-06-18T21:00:00Z"
+      },
+      "arrival": {
+        "iata": "PNQ",
+        "scheduled": "2025-06-18T22:00:00Z"
+      },
+      "price": 160,
+      "seats": {
+        "available": 40
+      }
+    }
+  ]
+}
